@@ -1,0 +1,6 @@
+NOTE: This is a placeholder. Download the actual ptau file from:
+https://hermez.s3-eu-west-1.amazonaws.com/powersOfTau28_hez_final_12.ptau
+
+Run: curl -O https://hermez.s3-eu-west-1.amazonaws.com/powersOfTau28_hez_final_12.ptau
+
+This file is ~400MB and contains the precomputed powers of tau for the trusted setup.
