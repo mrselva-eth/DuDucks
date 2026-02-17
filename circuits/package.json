@@ -1,0 +1,34 @@
+{
+  "name": "@duducks/circuits",
+  "version": "1.0.0",
+  "description": "Zero Knowledge Proof circuits for DuDucks government document verification",
+  "scripts": {
+    "compile": "circom aadhaar-verification.circom --r1cs --wasm --sym -o build",
+    "ptau": "snarkjs powersoftau new bn128 12 build/aadhaar_0000.ptau -v && snarkjs powersoftau contribute build/aadhaar_0000.ptau build/aadhaar_1000.ptau --name='First' -v && snarkjs powersoftau prepare-phase2 build/aadhaar_1000.ptau build/aadhaar_final.ptau -v",
+    "setup": "snarkjs groth16 setup build/aadhaar.r1cs build/aadhaar_final.ptau build/aadhaar_0000.zkey && snarkjs zkey contribute build/aadhaar_0000.zkey build/aadhaar_final.zkey --name='Groth16 setup' -v && snarkjs zkey verify build/aadhaar.r1cs build/aadhaar_final.ptau build/aadhaar_final.zkey",
+    "vkey": "snarkjs zkey export verificationkey build/aadhaar_final.zkey build/verification_key.json",
+    "witness": "node build/aadhaar_js/generate_witness.js build/aadhaar_js/aadhaar.wasm input.json witness.wtns",
+    "prove": "snarkjs groth16 prove build/aadhaar_final.zkey witness.wtns proof.json public.json",
+    "verify": "snarkjs groth16 verify build/verification_key.json public.json proof.json",
+    "test": "node test/test.js",
+    "build": "npm run compile && npm run setup && npm run vkey",
+    "deploy": "node scripts/deploy.js"
+  },
+  "keywords": [
+    "zero-knowledge",
+    "zk-proofs",
+    "circom",
+    "groth16",
+    "government-documents",
+    "aadhaar"
+  ],
+  "author": "DuDucks Team",
+  "license": "MIT",
+  "devDependencies": {
+    "circom": "^2.1.8",
+    "snarkjs": "^0.7.0"
+  },
+  "dependencies": {
+    "circomlib": "^2.0.5"
+  }
+}

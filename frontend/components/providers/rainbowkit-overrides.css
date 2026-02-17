@@ -1,0 +1,69 @@
+/**
+ * DuDucks RainbowKit Modal - Complete Redesign Overrides
+ * Keeps our color theme, completely new visual language
+ */
+
+/* Force our theme variables for any RainbowKit modal */
+[data-rk] {
+  --rk-colors-accentColor: #ec9137 !important;
+  --rk-colors-accentColorForeground: white !important;
+  --rk-colors-modalBackground: #fefdfb !important;
+  --rk-colors-modalBackdrop: rgba(237, 217, 198, 0.88) !important;
+  --rk-colors-modalText: #000000 !important;
+  --rk-colors-closeButton: #000000 !important;
+  --rk-colors-closeButtonBackground: #edd9c6 !important;
+  --rk-colors-generalBorder: rgba(236, 145, 55, 0.25) !important;
+  --rk-colors-menuItemBackground: rgba(237, 217, 198, 0.5) !important;
+  --rk-colors-connectButtonBackground: #ec9137 !important;
+  --rk-colors-connectButtonText: white !important;
+  --rk-radii-modal: 24px !important;
+  --rk-radii-modalMobile: 20px !important;
+  --rk-fonts-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+/* Overlay - warm blur matching our background */
+[data-rk] [data-radix-dialog-overlay],
+[data-rk] [data-dialog-overlay],
+[data-rk] [role="dialog"] ~ div:first-of-type {
+  backdrop-filter: blur(12px) !important;
+  background: rgba(237, 217, 198, 0.88) !important;
+}
+
+/* Modal panel - rounded card with accent border */
+[data-rk] [data-radix-dialog-content],
+[data-rk] [role="dialog"] {
+  border-radius: 24px !important;
+  border: 1px solid rgba(236, 145, 55, 0.2) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(236, 145, 55, 0.06) !important;
+}
+
+/* Headings - DuDucks typography */
+[data-rk] h1, [data-rk] h2, [data-rk] h3 {
+  color: #000 !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+}
+
+/* Close button */
+[data-rk] button[aria-label="Close"],
+[data-rk] button[aria-label="close"] {
+  border-radius: 50% !important;
+  background: #edd9c6 !important;
+  color: #000 !important;
+  transition: all 0.2s ease !important;
+}
+[data-rk] button[aria-label="Close"]:hover,
+[data-rk] button[aria-label="close"]:hover {
+  background: #ec9137 !important;
+  color: white !important;
+}
+
+/* Wallet list items - card style with accent border on hover */
+[data-rk] a[href], [data-rk] [role="button"] {
+  border-radius: 12px !important;
+  transition: all 0.2s ease !important;
+}
+[data-rk] a[href]:hover, [data-rk] [role="button"]:hover {
+  border-color: rgba(236, 145, 55, 0.5) !important;
+  background: rgba(236, 145, 55, 0.06) !important;
+}

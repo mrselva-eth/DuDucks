@@ -1,0 +1,66 @@
+# v0 runtime files (should only exist in preview, not in git)
+__v0_runtime_loader.js
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+
+# Node/Package Manager
+node_modules/
+*.tgz
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+.pnpm-store/
+
+# Build outputs
+.next/
+dist/
+build/
+out/
+.turbo/
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+.env.production.local
+.secrets/
+*.key
+private_keys/
+
+# Editor & IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# Solidity/Foundry
+forge-cache/
+forge-output/
+artifacts/
+cache/
+out/
+
+# Circom
+circuits/build/
+circuits/ptau/
+circuits/node_modules/
+*.zkey
+*.wasm
+*.witness
+
+# Vercel
+.vercel/

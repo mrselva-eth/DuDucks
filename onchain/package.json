@@ -1,0 +1,19 @@
+{
+  "name": "duducks-onchain",
+  "version": "1.0.0",
+  "description": "DuDucks Smart Contracts - Base Sepolia Deployment",
+  "private": true,
+  "scripts": {
+    "build": "forge build",
+    "test": "forge test",
+    "deploy:sepolia": "forge script script/Deploy.s.sol --rpc-url $BASE_SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify",
+    "deploy:local": "forge script script/Deploy.s.sol --rpc-url http://localhost:8545 --private-key $PRIVATE_KEY --broadcast",
+    "flatten": "forge flatten src/VerificationRegistry.sol -o flattened/VerificationRegistry.flat.sol",
+    "gas-report": "forge test --gas-report",
+    "lint": "forge fmt --check",
+    "format": "forge fmt"
+  },
+  "devDependencies": {
+    "foundry-config": "*"
+  }
+}

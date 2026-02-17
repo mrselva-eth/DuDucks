@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'DuDucks';
+  src: url('/fonts/font.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scroll-snap-type: y mandatory;
+}
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+body {
+  font-family: 'DuDucks', Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    /* DuDucks Theme - background #edd9c6, content black */
+    --background: 30 58% 85%;
+    --foreground: 0 0% 0%;
+    --card: 30 45% 92%;
+    --card-foreground: 0 0% 0%;
+    --popover: 30 45% 92%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 30 58% 85%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 31 84% 57%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 30 30% 75%;
+    --muted-foreground: 0 0% 25%;
+    --accent: 31 84% 57%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 35% 72%;
+    --input: 30 35% 72%;
+    --ring: 31 84% 57%;
+    --chart-1: 31 84% 57%;
+    --chart-2: 0 0% 0%;
+    --chart-3: 30 58% 85%;
+    --chart-4: 31 84% 57%;
+    --chart-5: 30 20% 50%;
+    --radius: 0.5rem;
+    --sidebar-background: 30 40% 88%;
+    --sidebar-foreground: 0 0% 0%;
+    --sidebar-primary: 31 84% 57%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 31 84% 57%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 30 35% 72%;
+    --sidebar-ring: 31 84% 57%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
