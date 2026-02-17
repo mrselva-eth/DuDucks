@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 import './globals.css'
-import { Web3Provider } from '@/components/providers/web3-provider'
+import { Web3ProviderClient } from '@/components/providers/web3-provider-client'
 
 export const metadata: Metadata = {
   title: 'DuDucks',
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans antialiased relative">
-        <Web3Provider>{children}</Web3Provider>
+        <Web3ProviderClient>{children}</Web3ProviderClient>
         {/* Full-page fixed white border frame (0.35 cm), behind navbar so line doesn't show on navbar */}
         <div
           className="fixed inset-0 border-[0.35cm] border-white pointer-events-none z-40"

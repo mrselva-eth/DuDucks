@@ -9,11 +9,12 @@ import { getDefaultConfig } from '@rainbow-me/rainbowkit'
 import { baseSepolia } from 'wagmi/chains'
 
 // Create config once so WagmiProvider can wrap the tree on first render (avoids WagmiProviderNotFoundError)
+// Use your Reown project ID (https://cloud.reown.com) — required for WalletConnect
 export const web3Config = getDefaultConfig({
   appName: 'DuDucks',
-  projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || 'default-project-id',
+  projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || '',
   chains: [baseSepolia],
-  ssr: true,
+  ssr: false,
 })
 
 /** @deprecated Use web3Config directly */
