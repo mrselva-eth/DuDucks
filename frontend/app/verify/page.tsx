@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { ChevronDown } from 'lucide-react'
 import { Header } from '@/components/header'
+import { WalletRequiredGuard } from '@/components/context/wallet-required-guard'
 import { DesignButton } from '@/components/design/button'
 import {
   Collapsible,
@@ -25,6 +26,7 @@ export default function VerifyPage() {
   return (
     <main className="flex flex-col min-h-screen bg-background">
       <Header />
+      <WalletRequiredGuard>
       {/* Fixed box: left side, 10cm × 15cm, does not move on scroll */}
       <div className="fixed left-6 top-[calc(4rem+1cm)] z-20 w-[10cm] h-[15cm] border-2 border-foreground rounded-sm flex flex-col items-center justify-between px-4 py-5 bg-background">
         {/* 1. Heading with curved underline */}
@@ -181,6 +183,7 @@ export default function VerifyPage() {
           </Collapsible>
         </div>
       </div>
+      </WalletRequiredGuard>
     </main>
   )
 }
